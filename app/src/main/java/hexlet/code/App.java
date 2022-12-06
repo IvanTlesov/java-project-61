@@ -10,6 +10,11 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
+        int even = 2;
+        int calc = 3;
+        int gcd = 4;
+        int progression = 5;
+        int prime = 6;
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
@@ -31,27 +36,19 @@ public class App {
 
         System.out.println("Hello, " + nameUser + "!");
 
-        if (answerUser == 2) {
+        if (answerUser == even) {
             String initGame = "Answer 'yes' if the number is even, otherwise answer 'no'.";
             Engine.runGame(NewEven.evenGame(), initGame, nameUser);
-        }
-
-        if (answerUser == 3) {
+        } else if (answerUser == calc) {
             String initgame = "What is the result of the expression?";
             Engine.runGame(Calc.calcGame(), initgame, nameUser);
-        }
-
-        if (answerUser == 4) {
+        } else if (answerUser == gcd) {
             String initgame = "Find the greatest common divisor of given numbers.";
             Engine.runGame(GCD.gcdGame(), initgame, nameUser);
-        }
-
-        if (answerUser == 5) {
+        } else if (answerUser == progression) {
             String initgame = "What number is missing in the progression?";
             Engine.runGame(Progression.progressionGame(), initgame, nameUser);
-        }
-
-        if (answerUser == 6) {
+        } else if (answerUser == prime) {
             String initgame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
             Engine.runGame(Prime.primeGame(), initgame, nameUser);
         }

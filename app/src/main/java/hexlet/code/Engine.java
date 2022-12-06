@@ -4,10 +4,11 @@ import java.util.Scanner;
 
 public class Engine {
     public static void runGame(String[][] questionAnswer, String initGame, String nameUser) {
+        int maxLevelGame = 3;
         System.out.println(initGame);
         int count = 0;
-        while (count <= 3) {
-            if (count == 3) {
+        while (count <= maxLevelGame) {
+            if (count == maxLevelGame) {
                 System.out.printf("Congratulations, %s!\n", nameUser);
                 break;
             }

@@ -1,9 +1,9 @@
 ### Hexlet tests and linter status:
+[![Test Coverage](https://api.codeclimate.com/v1/badges/75aea436df4b30f5cd38/test_coverage)](https://codeclimate.com/github/IvanTlesov/java-project-61/test_coverage)
+
 [![Actions Status](https://github.com/IvanTlesov/java-project-61/workflows/hexlet-check/badge.svg)](https://github.com/IvanTlesov/java-project-61/actions)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/75aea436df4b30f5cd38/maintainability)](https://codeclimate.com/github/IvanTlesov/java-project-61/maintainability)
-
-[![Test Coverage](https://api.codeclimate.com/v1/badges/75aea436df4b30f5cd38/test_coverage)](https://codeclimate.com/github/IvanTlesov/java-project-61/test_coverage)
 
 https://asciinema.org/a/inuWqRgaMJqzB9iOyhT7LkTTg
 

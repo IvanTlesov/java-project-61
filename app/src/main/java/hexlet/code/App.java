@@ -9,11 +9,11 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class App {
-    static int even = 2;
-    static int calc = 3;
-    static int gcd = 4;
-    static int progression = 5;
-    static int prime = 6;
+    final static int even = 2;
+    final static int calc = 3;
+    final static int gcd = 4;
+    final static int progression = 5;
+    final static int prime = 6;
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");

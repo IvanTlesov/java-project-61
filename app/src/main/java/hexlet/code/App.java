@@ -9,12 +9,12 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class App {
+    static int even = 2;
+    static int calc = 3;
+    static int gcd = 4;
+    static int progression = 5;
+    static int prime = 6;
     public static void main(String[] args) {
-        int even = 2;
-        int calc = 3;
-        int gcd = 4;
-        int progression = 5;
-        int prime = 6;
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
         System.out.println("2 - Even");

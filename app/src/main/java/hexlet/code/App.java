@@ -8,14 +8,14 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class App {
-    private final static int PROSRESSIONLENGTH = 10;
-    private final static int MAX = 50;
-    private final static int LENGTH = 3;
-    private final static int EVEN = 2;
-    private final static int CALC = 3;
-    private final static int GCD = 4;
-    private final static int PROGRESSION = 5;
-    private final static int PRIME = 6;
+    static final int PROSRESSIONLENGTH = 10;
+    static final int MAX = 50;
+    static final int LENGTH = 3;
+    static final int EVEN = 2;
+    static final int CALC = 3;
+    static final int GCD = 4;
+    static final int PROGRESSION = 5;
+    static final int PRIME = 6;
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");

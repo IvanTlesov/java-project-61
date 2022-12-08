@@ -1,19 +1,20 @@
 package hexlet.code;
 
 import hexlet.code.games.Calc;
-import hexlet.code.games.GCD;
+import hexlet.code.games.Gcd;
 import hexlet.code.games.NewEven;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
-
 import java.util.Scanner;
 
 public class App {
-    final static int even = 2;
-    final static int calc = 3;
-    final static int gcd = 4;
-    final static int progression = 5;
-    final static int prime = 6;
+    final static int MAX = 50;
+    final static int LENGTH = 3;
+    final static int EVEN = 2;
+    final static int CALC = 3;
+    final static int GCD = 4;
+    final static int PROGRESSION = 5;
+    final static int PRIME = 6;
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
         System.out.println("1 - Greet");
@@ -36,21 +37,21 @@ public class App {
 
         System.out.println("Hello, " + nameUser + "!");
 
-        if (answerUser == even) {
+        if (answerUser == EVEN) {
             String initGame = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-            Engine.runGame(NewEven.evenGame(), initGame, nameUser);
-        } else if (answerUser == calc) {
+            Engine.runGame(NewEven.evenGame(LENGTH, MAX), initGame, nameUser);
+        } else if (answerUser == CALC) {
             String initgame = "What is the result of the expression?";
-            Engine.runGame(Calc.calcGame(), initgame, nameUser);
-        } else if (answerUser == gcd) {
+            Engine.runGame(Calc.calcGame(LENGTH, MAX), initgame, nameUser);
+        } else if (answerUser == GCD) {
             String initgame = "Find the greatest common divisor of given numbers.";
-            Engine.runGame(GCD.gcdGame(), initgame, nameUser);
-        } else if (answerUser == progression) {
+            Engine.runGame(Gcd.gcdGame(LENGTH, MAX), initgame, nameUser);
+        } else if (answerUser == PROGRESSION) {
             String initgame = "What number is missing in the progression?";
-            Engine.runGame(Progression.progressionGame(), initgame, nameUser);
-        } else if (answerUser == prime) {
+            Engine.runGame(Progression.progressionGame(LENGTH, MAX), initgame, nameUser);
+        } else if (answerUser == PRIME) {
             String initgame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-            Engine.runGame(Prime.primeGame(), initgame, nameUser);
+            Engine.runGame(Prime.primeGame(LENGTH, MAX), initgame, nameUser);
         }
     }
 }

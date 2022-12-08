@@ -1,19 +1,19 @@
 package hexlet.code.games;
 
 public class Calc {
-    public static String[][] calcGame() {
-        String[][] questionAnswer = new String[3][2];
-        for (int i = 0; i < 3; i++) {
-            int randomNumber = (int) (Math.random() * 10);
-            int firstNumber = (int) (Math.random() * 50);
-            int secondNumber = (int) (Math.random() * 50);
-            if (randomNumber % 3 == 0) {
+    public static String[][] calcGame(int lengthArray, int maxRandomLimit) {
+        String[][] questionAnswer = new String[lengthArray][2];
+        for (int i = 0; i < lengthArray; i++) {
+            int randomNumber = (int) (Math.random() * maxRandomLimit);
+            int firstNumber = (int) (Math.random() * maxRandomLimit);
+            int secondNumber = (int) (Math.random() * maxRandomLimit);
+            if (randomNumber % lengthArray == 0) {
                 questionAnswer[i][0] = firstNumber + " + " + secondNumber;
                 questionAnswer[i][1] = String.valueOf(firstNumber + secondNumber);
-            } else if (randomNumber % 3 == 1) {
+            } else if (randomNumber % lengthArray == 1) {
                 questionAnswer[i][0] = firstNumber + " - " + secondNumber;
                 questionAnswer[i][1] = String.valueOf(firstNumber - secondNumber);
-            } else if (randomNumber % 3 == 2) {
+            } else if (randomNumber % lengthArray == 2) {
                 questionAnswer[i][0] = firstNumber + " * " + secondNumber;
                 questionAnswer[i][1] = String.valueOf(firstNumber * secondNumber);
             }

@@ -14,7 +14,7 @@ public class Prime {
         String result = "yes";
         int maxCount = Integer.parseInt(number) % 2 == 0 ? Integer.parseInt(number) / 2
                 : Integer.parseInt(number) / 2 + 1;
-        for (int i = 2; i < maxCount; i++) {
+        for (int i = 2; i <= maxCount; i++) {
             if (Integer.parseInt(number) % i == 0) {
                 result = "no";
             }

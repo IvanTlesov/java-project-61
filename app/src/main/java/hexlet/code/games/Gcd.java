@@ -7,8 +7,9 @@ public class Gcd {
             int firstNumber = (int) (Math.random() * maxRandomLimit);
             int secondNumber = (int) (Math.random() * maxRandomLimit);
             questionAnswer[i][0] = firstNumber + " " + secondNumber;
-            questionAnswer[i][1] = String.valueOf(gcd(Math.max(firstNumber, secondNumber),
-                    Math.min(firstNumber, secondNumber)));
+            int trueAnswer = gcd(Math.max(firstNumber, secondNumber),
+                    Math.min(firstNumber, secondNumber));
+            questionAnswer[i][1] = String.valueOf(trueAnswer);
         }
         return questionAnswer;
     }

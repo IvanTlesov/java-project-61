@@ -3,8 +3,8 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static void runGame(String[][] questionAnswer, String initGame, String nameUser) {
-        int maxLevelGame = 3;
+    public static void runGame(String[][] questionAnswer, String initGame, String nameUser, int lengthArray) {
+        int maxLevelGame = lengthArray;
 
         System.out.println(initGame);
         int count = 0;

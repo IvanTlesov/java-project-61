@@ -30,6 +30,7 @@ public class App {
             case Gcd.GCD -> Gcd.gcdGame();
             case Progression.PROGRESSION -> Progression.progressionGame();
             case Prime.PRIME -> Prime.primeGame();
+            default -> System.out.println("Answer must be 0 .. 6");
         }
     }
 }

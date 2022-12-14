@@ -10,7 +10,7 @@ public class Engine {
         int count = 0;
         while (count <= LENGTH_ARRAY) {
             if (count == LENGTH_ARRAY) {
-                System.out.printf("Congratulations, %s!\n", Cli.nameUser);
+                System.out.printf("Congratulations, %s!\n", Cli.getNameUser());
                 break;
             }
 
@@ -25,7 +25,7 @@ public class Engine {
             } else {
                 System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n",
                         answerUser, questionAnswer[count][1]);
-                System.out.printf("Let's try again, %s!\n", Cli.nameUser);
+                System.out.printf("Let's try again, %s!\n", Cli.getNameUser());
                 break;
             }
         }

@@ -1,13 +1,18 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 public class Prime {
-    public static String[][] primeGame(int lengthArray, int maxRandomLimit) {
-        String[][] questionAnswer = new String[lengthArray][2];
-        for (int i = 0; i < lengthArray; i++) {
-            questionAnswer[i][0] = String.valueOf(2 + (int) (Math.random() * maxRandomLimit));
+    public static final int PRIME = 6;
+    static final String INIT_GAME = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    public static void primeGame() {
+        String[][] questionAnswer = new String[Engine.LENGTH_ARRAY][2];
+        for (int i = 0; i < Engine.LENGTH_ARRAY; i++) {
+            questionAnswer[i][0] = String.valueOf(2 + (int) (Math.random() * Engine.MAX_RANDOM_LIMIT));
             questionAnswer[i][1] = isPrime(questionAnswer[i][0]);
         }
-        return questionAnswer;
+
+        Engine.runGame(questionAnswer, INIT_GAME);
     }
 
     public static String isPrime(String number) {

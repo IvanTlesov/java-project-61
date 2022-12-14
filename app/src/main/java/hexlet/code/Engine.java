@@ -3,14 +3,14 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static void runGame(String[][] questionAnswer, String initGame, String nameUser, int lengthArray) {
-        int maxLevelGame = lengthArray;
-
+    public static final int LENGTH_ARRAY = 3;
+    public static final int MAX_RANDOM_LIMIT = 50;
+    public static void runGame(String[][] questionAnswer, String initGame) {
         System.out.println(initGame);
         int count = 0;
-        while (count <= maxLevelGame) {
-            if (count == maxLevelGame) {
-                System.out.printf("Congratulations, %s!\n", nameUser);
+        while (count <= LENGTH_ARRAY) {
+            if (count == LENGTH_ARRAY) {
+                System.out.printf("Congratulations, %s!\n", Cli.NAME_USER);
                 break;
             }
 
@@ -25,7 +25,7 @@ public class Engine {
             } else {
                 System.out.printf("'%s' is wrong answer ;(. Correct answer was '%s'.\n",
                         answerUser, questionAnswer[count][1]);
-                System.out.printf("Let's try again, %s!\n", nameUser);
+                System.out.printf("Let's try again, %s!\n", Cli.NAME_USER);
                 break;
             }
         }

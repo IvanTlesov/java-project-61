@@ -31,6 +31,6 @@ public class Calc {
         Engine.runGame(questionAnswer, INIT_GAME);
     }
     static String calculate(int firstNumber, int secondNumber, String operation) {
-        return firstNumber + operation + secondNumber;
+        return firstNumber + " " + operation + " " + secondNumber;
     }
 }

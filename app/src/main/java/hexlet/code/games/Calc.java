@@ -26,6 +26,7 @@ public class Calc {
                     questionAnswer[i][0] = calculate(firstNumber, secondNumber, "*");
                     questionAnswer[i][1] = String.valueOf(firstNumber * secondNumber);
                 }
+                default -> throw new IllegalStateException("Unexpected value: " + randomNumber % Engine.LENGTH_ARRAY);
             }
         }
         Engine.runGame(questionAnswer, INIT_GAME);

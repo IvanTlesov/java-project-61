@@ -12,17 +12,25 @@ public class Calc {
             int randomNumber = (int) (Math.random() * Engine.MAX_RANDOM_LIMIT);
             int firstNumber = (int) (Math.random() * Engine.MAX_RANDOM_LIMIT);
             int secondNumber = (int) (Math.random() * Engine.MAX_RANDOM_LIMIT);
-            if (randomNumber % Engine.LENGTH_ARRAY == 0) {
-                questionAnswer[i][0] = firstNumber + " + " + secondNumber;
-                questionAnswer[i][1] = String.valueOf(firstNumber + secondNumber);
-            } else if (randomNumber % Engine.LENGTH_ARRAY == 1) {
-                questionAnswer[i][0] = firstNumber + " - " + secondNumber;
-                questionAnswer[i][1] = String.valueOf(firstNumber - secondNumber);
-            } else if (randomNumber % Engine.LENGTH_ARRAY == 2) {
-                questionAnswer[i][0] = firstNumber + " * " + secondNumber;
-                questionAnswer[i][1] = String.valueOf(firstNumber * secondNumber);
+
+            switch (randomNumber % Engine.LENGTH_ARRAY) {
+                case 0 -> {
+                    questionAnswer[i][0] = calculate(firstNumber, secondNumber, "+");
+                    questionAnswer[i][1] = String.valueOf(firstNumber + secondNumber);
+                }
+                case 1 -> {
+                    questionAnswer[i][0] = calculate(firstNumber, secondNumber, "-");
+                    questionAnswer[i][1] = String.valueOf(firstNumber - secondNumber);
+                }
+                case 2 -> {
+                    questionAnswer[i][0] = calculate(firstNumber, secondNumber, "*");
+                    questionAnswer[i][1] = String.valueOf(firstNumber * secondNumber);
+                }
             }
         }
         Engine.runGame(questionAnswer, INIT_GAME);
+    }
+    static String calculate(int firstNumber, int secondNumber, String operation) {
+        return firstNumber + operation + secondNumber;
     }
 }

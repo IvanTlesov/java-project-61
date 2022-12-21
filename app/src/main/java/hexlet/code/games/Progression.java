@@ -9,12 +9,13 @@ public class Progression {
     public static void progressionGame() {
         String[][] answerQuestion = new String[Engine.LENGTH_ARRAY][2];
         for (int i = 0; i < Engine.LENGTH_ARRAY; i++) {
-            String[] questionArray = new String[PROSRESSIONLENGTH];
-            questionArray[0] = String.valueOf((int) (Math.random() * Engine.MAX_RANDOM_LIMIT));
-            int differenceProgression = 1 + (int) (Math.random() * Engine.MAX_RANDOM_LIMIT);
-            for (int j = 1; j < PROSRESSIONLENGTH; j++) {
-                questionArray[j] = String.valueOf(Integer.parseInt(questionArray[j - 1]) + differenceProgression);
-            }
+//            String[] questionArray = new String[PROSRESSIONLENGTH];
+//            questionArray[0] = String.valueOf((int) (Math.random() * Engine.MAX_RANDOM_LIMIT));
+//            int differenceProgression = 1 + (int) (Math.random() * Engine.MAX_RANDOM_LIMIT);
+//            for (int j = 1; j < PROSRESSIONLENGTH; j++) {
+//                questionArray[j] = String.valueOf(Integer.parseInt(questionArray[j - 1]) + differenceProgression);
+//            }
+            String[] questionArray = getProgressionArray();
             int numberRandomElement = (int) (Math.random() * PROSRESSIONLENGTH);
             answerQuestion[i][1] = questionArray[numberRandomElement];
             questionArray[numberRandomElement] = "..";
@@ -25,4 +26,15 @@ public class Progression {
         }
         Engine.runGame(answerQuestion, INIT_GAME);
     }
+
+    static String[] getProgressionArray() {
+        int firstElement = (int) (Math.random() * Engine.MAX_RANDOM_LIMIT);
+        int differenceProgression = 1 + (int) (Math.random() * Engine.MAX_RANDOM_LIMIT);
+        String[] progressionArray = new String[PROSRESSIONLENGTH];
+        for (int i = 0; i < PROSRESSIONLENGTH; i++) {
+            progressionArray[i] = String.valueOf(firstElement + differenceProgression * (i - 1));
+        }
+        return progressionArray;
+    }
+
 }

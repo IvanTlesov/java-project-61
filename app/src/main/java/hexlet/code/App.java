@@ -22,15 +22,16 @@ public class App {
         Scanner scannerGame = new Scanner(System.in);
         int answerUser = scannerGame.nextInt();
 
-        Cli.greeting();
-
         switch (answerUser) {
+            case Cli.CLI -> Cli.greeting();
             case NewEven.EVEN -> NewEven.evenGame();
             case Calc.CALC -> Calc.calcGame();
             case Gcd.GCD -> Gcd.gcdGame();
             case Progression.PROGRESSION -> Progression.progressionGame();
             case Prime.PRIME -> Prime.primeGame();
-            default -> System.out.println("Answer must be 0 .. 6");
+            default -> System.out.println("For game answer must be 1 .. 6");
         }
+
+        scannerGame.close();
     }
 }

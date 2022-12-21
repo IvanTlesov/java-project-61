@@ -10,8 +10,12 @@ public class NewEven {
         for (int i = 0; i < Engine.LENGTH_ARRAY; i++) {
             int randomNumber = (int) Math.round(Math.random() * Engine.MAX_RANDOM_LIMIT);
             questionAnswer[i][0] = String.valueOf(randomNumber);
-            questionAnswer[i][1] = randomNumber % 2 == 0 ? "yes" : "no";
+            questionAnswer[i][1] = NewEven.isEven(randomNumber);
         }
         Engine.runGame(questionAnswer, INIT_GAME);
+    }
+
+    static String isEven(int number) {
+        return number % 2 == 0 ? "yes" : "no";
     }
 }

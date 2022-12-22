@@ -9,24 +9,28 @@ public class Progression {
     public static void progressionGame() {
         String[][] answerQuestion = new String[Engine.LENGTH_ARRAY][2];
         for (int i = 0; i < Engine.LENGTH_ARRAY; i++) {
-            String[] questionArray = getProgressionArray();
-            int numberRandomElement = (int) (Math.random() * PROSRESSIONLENGTH);
-            answerQuestion[i][1] = questionArray[numberRandomElement];
-            questionArray[numberRandomElement] = "..";
-            answerQuestion[i][0] = questionArray[0];
+            int[] progressionArray = getProgressionArray();
+            int randomElement = 1 + (int) (Math.random() * PROSRESSIONLENGTH);
+            answerQuestion[i][1] = String.valueOf(progressionArray[randomElement]);//строка-ответ
+            answerQuestion[i][0] = String.valueOf(progressionArray[0]);
+
             for (int j = 1; j < PROSRESSIONLENGTH; j++) {
-                answerQuestion[i][0] = answerQuestion[i][0] + " " + questionArray[j];
+                if (j == randomElement) {
+                    answerQuestion[i][0] = answerQuestion[i][0] + " .. ";
+                    continue;
+                }
+                answerQuestion[i][0] = answerQuestion[i][0] + " " + progressionArray[j];
             }
         }
         Engine.runGame(answerQuestion, INIT_GAME);
     }
 
-    static String[] getProgressionArray() {
+    static int[] getProgressionArray() {
         int firstElement = (int) (Math.random() * Engine.MAX_RANDOM_LIMIT);
         int differenceProgression = 1 + (int) (Math.random() * Engine.MAX_RANDOM_LIMIT);
-        String[] progressionArray = new String[PROSRESSIONLENGTH];
+        int[] progressionArray = new int[PROSRESSIONLENGTH];
         for (int i = 0; i < PROSRESSIONLENGTH; i++) {
-            progressionArray[i] = String.valueOf(firstElement + differenceProgression * (i - 1));
+            progressionArray[i] = firstElement + differenceProgression * (i - 1);
         }
         return progressionArray;
     }

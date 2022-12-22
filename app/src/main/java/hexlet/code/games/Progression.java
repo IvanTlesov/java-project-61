@@ -11,7 +11,7 @@ public class Progression {
         for (int i = 0; i < Engine.LENGTH_ARRAY; i++) {
             int[] progressionArray = getProgressionArray();
             int randomElement = 1 + (int) (Math.random() * PROSRESSIONLENGTH - 1);
-            answerQuestion[i][1] = String.valueOf(progressionArray[randomElement]);//строка-ответ
+            answerQuestion[i][1] = String.valueOf(progressionArray[randomElement]);
             answerQuestion[i][0] = String.valueOf(progressionArray[0]);
 
             for (int j = 1; j < PROSRESSIONLENGTH; j++) {

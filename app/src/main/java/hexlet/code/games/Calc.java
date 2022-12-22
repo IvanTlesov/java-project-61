@@ -27,8 +27,6 @@ public class Calc {
         Engine.runGame(questionAnswer, INIT_GAME);
     }
     static int calculate(int firstNumber, int secondNumber, String operation) {
-        int randomNumber = (int) (Math.random() * Engine.MAX_RANDOM_LIMIT);
-
         switch (operation) {
             case " + " -> {
                 return firstNumber + secondNumber;
@@ -36,10 +34,9 @@ public class Calc {
             case " - " -> {
                 return firstNumber - secondNumber;
             }
-            case " * " -> {
+            default -> {
                 return firstNumber * secondNumber;
             }
-            default -> throw new IllegalStateException("Unexpected value: " + randomNumber % Engine.LENGTH_ARRAY);
         }
     }
 }

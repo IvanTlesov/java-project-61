@@ -2,7 +2,7 @@ package hexlet.code;
 
 import hexlet.code.games.Calc;
 import hexlet.code.games.Gcd;
-import hexlet.code.games.NewEven;
+import hexlet.code.games.Even;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Progression;
 import java.util.Scanner;
@@ -24,7 +24,7 @@ public class App {
 
         switch (answerUser) {
             case Cli.CLI -> Cli.greeting();
-            case NewEven.EVEN -> NewEven.evenGame();
+            case Even.EVEN -> Even.evenGame();
             case Calc.CALC -> Calc.calcGame();
             case Gcd.GCD -> Gcd.gcdGame();
             case Progression.PROGRESSION -> Progression.progressionGame();

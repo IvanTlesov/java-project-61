@@ -10,7 +10,7 @@ public class Progression {
         String[][] answerQuestion = new String[Engine.LENGTH_ARRAY][2];
         for (int i = 0; i < Engine.LENGTH_ARRAY; i++) {
             int[] progressionArray = getProgressionArray();
-            int randomElement = 1 + (int) (Math.random() * PROSRESSIONLENGTH);
+            int randomElement = 1 + (int) (Math.random() * PROSRESSIONLENGTH - 1);
             answerQuestion[i][1] = String.valueOf(progressionArray[randomElement]);//строка-ответ
             answerQuestion[i][0] = String.valueOf(progressionArray[0]);
 

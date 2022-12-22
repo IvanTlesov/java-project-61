@@ -16,7 +16,7 @@ public class Progression {
 
             for (int j = 1; j < PROSRESSIONLENGTH; j++) {
                 if (j == randomElement) {
-                    answerQuestion[i][0] = answerQuestion[i][0] + " .. ";
+                    answerQuestion[i][0] = answerQuestion[i][0] + " ..";
                     continue;
                 }
                 answerQuestion[i][0] = answerQuestion[i][0] + " " + progressionArray[j];

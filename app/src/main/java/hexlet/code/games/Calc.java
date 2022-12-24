@@ -25,7 +25,7 @@ public class Calc {
         }
         Engine.runGame(questionAnswer, INIT_GAME);
     }
-    static int calculate(int firstNumber, int secondNumber, String operation) throws IllegalStateException{
+    static int calculate(int firstNumber, int secondNumber, String operation) throws IllegalStateException {
         switch (operation) {
             case " + " -> {
                 return firstNumber + secondNumber;

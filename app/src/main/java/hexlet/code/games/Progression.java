@@ -9,7 +9,9 @@ public class Progression {
     public static void progressionGame() {
         String[][] answerQuestion = new String[Engine.LENGTH_ARRAY][2];
         for (int i = 0; i < Engine.LENGTH_ARRAY; i++) {
-            int[] progressionArray = getProgressionArray();
+            int firstElement = (int) (Math.random() * Engine.MAX_RANDOM_LIMIT);
+            int differenceProgression = 1 + (int) (Math.random() * Engine.MAX_RANDOM_LIMIT);
+            int[] progressionArray = buildProgressionArray(firstElement, differenceProgression, PROSRESSIONLENGTH);
             int randomElement = 1 + (int) (Math.random() * PROSRESSIONLENGTH - 1);
             answerQuestion[i][1] = String.valueOf(progressionArray[randomElement]);
             answerQuestion[i][0] = String.valueOf(progressionArray[0]);
@@ -25,11 +27,9 @@ public class Progression {
         Engine.runGame(answerQuestion, INIT_GAME);
     }
 
-    static int[] getProgressionArray() {
-        int firstElement = (int) (Math.random() * Engine.MAX_RANDOM_LIMIT);
-        int differenceProgression = 1 + (int) (Math.random() * Engine.MAX_RANDOM_LIMIT);
-        int[] progressionArray = new int[PROSRESSIONLENGTH];
-        for (int i = 0; i < PROSRESSIONLENGTH; i++) {
+    static int[] buildProgressionArray(int firstElement, int differenceProgression, int progressionLength) {
+        int[] progressionArray = new int[progressionLength];
+        for (int i = 0; i < progressionLength; i++) {
             progressionArray[i] = firstElement + differenceProgression * (i - 1);
         }
         return progressionArray;

@@ -3,7 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 
-
 public class Calc {
     public static final int CALC = 3;
     static final String INIT_GAME = "What is the result of the expression?";
@@ -26,7 +25,7 @@ public class Calc {
         }
         Engine.runGame(questionAnswer, INIT_GAME);
     }
-    static int calculate(int firstNumber, int secondNumber, String operation) {
+    static int calculate(int firstNumber, int secondNumber, String operation) throws IllegalStateException{
         switch (operation) {
             case " + " -> {
                 return firstNumber + secondNumber;
@@ -34,9 +33,10 @@ public class Calc {
             case " - " -> {
                 return firstNumber - secondNumber;
             }
-            default -> {
+            case " * " -> {
                 return firstNumber * secondNumber;
             }
+            default -> throw new IllegalStateException("Unexpected value: " + operation);
         }
     }
 }
